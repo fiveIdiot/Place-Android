@@ -15,4 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "Place-Android"
 include(":app")
- 
+include(":data")
+include(":domain")
+include(":navigation")
+include(":core:kotlin")
+include(":core:designsystem")
