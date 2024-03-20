@@ -8,7 +8,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.place.designsystem.R
 
-internal object PlaceTypography {
+object PlaceTypography {
 
     private val notosanskr = FontFamily(
         Font(R.font.notosans_kr_black, FontWeight.Black),

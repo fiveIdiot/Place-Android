@@ -2,7 +2,7 @@ package com.place.designsystem.theme.color
 
 import androidx.compose.ui.graphics.Color
 
-internal abstract class PlaceColor {
+abstract class PlaceColor {
 
     // black, white
     abstract val black: Color
