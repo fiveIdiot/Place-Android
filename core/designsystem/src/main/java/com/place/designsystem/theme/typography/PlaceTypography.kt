@@ -25,54 +25,79 @@ object PlaceTypography {
     @Stable
     val headline1 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 32.sp
+        fontSize = 32.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 38.4.sp,
+        letterSpacing = (-1.28).sp
     )
 
     @Stable
     val headline2 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 28.sp
+        fontSize = 28.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 33.6.sp,
+        letterSpacing = (-1.12).sp
     )
 
     @Stable
     val subHeadline1 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 24.sp
+        fontSize = 24.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 28.8.sp,
+        letterSpacing = (-0.96).sp
     )
 
     @Stable
     val subHeadline2 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 20.sp
+        fontSize = 20.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 24.sp,
+        letterSpacing = (-0.8).sp
     )
 
     @Stable
     val button = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 16.sp
+        fontSize = 16.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 19.2.sp,
+        letterSpacing = (-0.64).sp
     )
 
     @Stable
     val body1 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 15.sp
+        fontSize = 15.sp,
+        fontWeight = FontWeight.Medium,
+        lineHeight = 22.5.sp,
+        letterSpacing = (-0.3).sp
     )
 
     @Stable
     val body2 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 14.sp
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Medium,
+        lineHeight = 21.sp,
+        letterSpacing = (-0.28).sp
     )
 
     @Stable
     val caption1 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 12.sp
+        fontSize = 12.sp,
+        fontWeight = FontWeight.Normal
     )
 
     @Stable
     val caption2 = TextStyle(
         fontFamily = notosanskr,
-        fontSize = 11.sp
+        fontSize = 11.sp,
+        fontWeight = FontWeight.Normal,
+        lineHeight = 16.5.sp,
+        letterSpacing = (-0.22).sp
     )
 }
