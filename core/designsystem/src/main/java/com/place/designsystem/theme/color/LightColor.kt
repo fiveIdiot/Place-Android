@@ -4,8 +4,8 @@ import androidx.compose.ui.graphics.Color
 
 /* 현재 다크 Color와 색상 동일, 추후 Light모드 나오면 대응 */
 internal object LightColor : PlaceColor() {
-    override val black: Color = Color(0xFFFFFFFF)
-    override val white: Color = Color(0xFF000000)
+    override val black: Color = Color(0xFF000000)
+    override val white: Color = Color(0xFFFFFFFF)
 
     override val grey1: Color = Color(0xFF141416)
     override val grey2: Color = Color(0xFF212123)

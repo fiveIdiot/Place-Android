@@ -3,8 +3,8 @@ package com.place.designsystem.theme.color
 import androidx.compose.ui.graphics.Color
 
 internal object DarkColor : PlaceColor() {
-    override val black: Color = Color(0xFFFFFFFF)
-    override val white: Color = Color(0xFF000000)
+    override val black: Color = Color(0xFF000000)
+    override val white: Color = Color(0xFFFFFFFF)
 
     override val grey1: Color = Color(0xFF141416)
     override val grey2: Color = Color(0xFF212123)
