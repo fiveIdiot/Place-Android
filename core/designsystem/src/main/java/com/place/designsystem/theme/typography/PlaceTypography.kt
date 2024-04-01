@@ -1,6 +1,7 @@
 package com.place.designsystem.theme.typography
 
 import androidx.compose.runtime.Stable
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -28,7 +29,10 @@ object PlaceTypography {
         fontSize = 32.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 38.4.sp,
-        letterSpacing = (-1.28).sp
+        letterSpacing = (-1.28).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -37,7 +41,10 @@ object PlaceTypography {
         fontSize = 28.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 33.6.sp,
-        letterSpacing = (-1.12).sp
+        letterSpacing = (-1.12).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -46,7 +53,10 @@ object PlaceTypography {
         fontSize = 24.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 28.8.sp,
-        letterSpacing = (-0.96).sp
+        letterSpacing = (-0.96).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -55,7 +65,10 @@ object PlaceTypography {
         fontSize = 20.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 24.sp,
-        letterSpacing = (-0.8).sp
+        letterSpacing = (-0.8).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -64,7 +77,10 @@ object PlaceTypography {
         fontSize = 16.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 19.2.sp,
-        letterSpacing = (-0.64).sp
+        letterSpacing = (-0.64).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -73,7 +89,10 @@ object PlaceTypography {
         fontSize = 15.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 22.5.sp,
-        letterSpacing = (-0.3).sp
+        letterSpacing = (-0.3).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -82,14 +101,20 @@ object PlaceTypography {
         fontSize = 14.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 21.sp,
-        letterSpacing = (-0.28).sp
+        letterSpacing = (-0.28).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
     val caption1 = TextStyle(
         fontFamily = notosanskr,
         fontSize = 12.sp,
-        fontWeight = FontWeight.Normal
+        fontWeight = FontWeight.Normal,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 
     @Stable
@@ -98,6 +123,9 @@ object PlaceTypography {
         fontSize = 11.sp,
         fontWeight = FontWeight.Normal,
         lineHeight = 16.5.sp,
-        letterSpacing = (-0.22).sp
+        letterSpacing = (-0.22).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
     )
 }

@@ -10,30 +10,113 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.icon.*
+import com.place.designsystem.icon.AgainIconLarge
+import com.place.designsystem.icon.AgainIconMedium
+import com.place.designsystem.icon.AgainIconSmall
+import com.place.designsystem.icon.ArrowIconLarge
+import com.place.designsystem.icon.ArrowIconMedium
+import com.place.designsystem.icon.ArrowIconSmall
+import com.place.designsystem.icon.ArrowIconXLarge
+import com.place.designsystem.icon.ArrowheadIconLarge
+import com.place.designsystem.icon.ArrowheadIconMedium
+import com.place.designsystem.icon.ArrowheadIconSmall
+import com.place.designsystem.icon.ArrowheadIconXLarge
+import com.place.designsystem.icon.BookmarkIconLarge
+import com.place.designsystem.icon.BookmarkIconMedium
+import com.place.designsystem.icon.BookmarkIconSmall
+import com.place.designsystem.icon.BookmarkIconXLarge
+import com.place.designsystem.icon.CallIconLarge
+import com.place.designsystem.icon.CallIconMedium
+import com.place.designsystem.icon.CallIconSmall
+import com.place.designsystem.icon.CallIconXLarge
+import com.place.designsystem.icon.ClockIconLarge
+import com.place.designsystem.icon.ClockIconMedium
+import com.place.designsystem.icon.ClockIconSmall
+import com.place.designsystem.icon.ClockIconXLarge
+import com.place.designsystem.icon.CoinIconLarge
+import com.place.designsystem.icon.CoinIconMedium
+import com.place.designsystem.icon.CoinIconSmall
+import com.place.designsystem.icon.CoinIconXLarge
+import com.place.designsystem.icon.CompassIconLarge
+import com.place.designsystem.icon.CompassIconMedium
+import com.place.designsystem.icon.CompassIconSmall
+import com.place.designsystem.icon.CompassIconXLarge
+import com.place.designsystem.icon.CurvedArrowIconLarge
+import com.place.designsystem.icon.CurvedArrowIconMedium
+import com.place.designsystem.icon.CurvedArrowIconSmall
+import com.place.designsystem.icon.CurvedArrowIconXLarge
+import com.place.designsystem.icon.FilterIconLarge
+import com.place.designsystem.icon.FilterIconMedium
+import com.place.designsystem.icon.FilterIconSmall
+import com.place.designsystem.icon.FilterIconXLarge
+import com.place.designsystem.icon.HomeIconLarge
+import com.place.designsystem.icon.HomeIconMedium
+import com.place.designsystem.icon.HomeIconSmall
+import com.place.designsystem.icon.HomeIconXLarge
+import com.place.designsystem.icon.InternetIconLarge
+import com.place.designsystem.icon.InternetIconMedium
+import com.place.designsystem.icon.InternetIconSmall
+import com.place.designsystem.icon.InternetIconXLarge
+import com.place.designsystem.icon.LocationIconLarge
+import com.place.designsystem.icon.LocationIconMedium
+import com.place.designsystem.icon.LocationIconSmall
+import com.place.designsystem.icon.LocationIconXLarge
+import com.place.designsystem.icon.MirrorPagerIconSmall
+import com.place.designsystem.icon.MirrorPagerIconXLarge
+import com.place.designsystem.icon.MirrorPaperIconLarge
+import com.place.designsystem.icon.MirrorPaperIconMedium
+import com.place.designsystem.icon.MugCupIconLarge
+import com.place.designsystem.icon.MugCupIconMedium
+import com.place.designsystem.icon.MugCupIconSmall
+import com.place.designsystem.icon.MugCupIconXLarge
+import com.place.designsystem.icon.PenIconLarge
+import com.place.designsystem.icon.PenIconMedium
+import com.place.designsystem.icon.PenIconSmall
+import com.place.designsystem.icon.PenIconXLarge
+import com.place.designsystem.icon.PeopleIconLarge
+import com.place.designsystem.icon.PeopleIconMedium
+import com.place.designsystem.icon.PeopleIconSmall
+import com.place.designsystem.icon.PeopleIconXLarge
+import com.place.designsystem.icon.PinIconLarge
+import com.place.designsystem.icon.PinIconMedium
+import com.place.designsystem.icon.PinIconSmall
+import com.place.designsystem.icon.PinIconXLarge
+import com.place.designsystem.icon.PlusIconLarge
+import com.place.designsystem.icon.PlusIconMedium
+import com.place.designsystem.icon.PlusIconSmall
+import com.place.designsystem.icon.PlusIconXLarge
+import com.place.designsystem.icon.PlusInSquareIconLarge
+import com.place.designsystem.icon.PlusInSquareIconMedium
+import com.place.designsystem.icon.PlusInSquareIconSmall
+import com.place.designsystem.icon.PlusInSquareIconXLarge
+import com.place.designsystem.icon.SearchIconLarge
+import com.place.designsystem.icon.SearchIconMedium
+import com.place.designsystem.icon.SearchIconSmall
+import com.place.designsystem.icon.SearchIconXLarge
+import com.place.designsystem.icon.ShareIconLarge
+import com.place.designsystem.icon.ShareIconMedium
+import com.place.designsystem.icon.ShareIconSmall
+import com.place.designsystem.icon.ShareIconXLarge
+import com.place.designsystem.icon.XIconLarge
+import com.place.designsystem.icon.XIconMedium
+import com.place.designsystem.icon.XIconSmall
+import com.place.designsystem.icon.XIconXLarge
 import com.place.designsystem.theme.PlaceTheme
-import com.place.designsystem.theme.typography.PlaceTypography
 
 @Preview
 @Composable
 fun TypoPreview() {
-    val typos = listOf(
-        Pair(PlaceTypography.headline1, "headline1"),
-        Pair(PlaceTypography.headline2, "headline2"),
-        Pair(PlaceTypography.subHeadline1, "subheadline1"),
-        Pair(PlaceTypography.subHeadline2, "subheadline2"),
-        Pair(PlaceTypography.button, "button"),
-        Pair(PlaceTypography.body1, "body1"),
-        Pair(PlaceTypography.body2, "body2"),
-        Pair(PlaceTypography.caption1, "caption1"),
-        Pair(PlaceTypography.caption2, "caption2"),
-    )
-
-    PlaceTheme { colors, _ ->
+    PlaceTheme { colors, typography ->
         Column(modifier = Modifier.background(colors.white)) {
-            typos.forEach {
-                Text(text = it.second, style = it.first, color = colors.black)
-            }
+            Text(text = "headline1", style = typography.headline1, color = colors.black)
+            Text(text = "headline2", style = typography.headline2, color = colors.black)
+            Text(text = "subHeadline1", style = typography.subHeadline1, color = colors.black)
+            Text(text = "subHeadline2", style = typography.subHeadline2, color = colors.black)
+            Text(text = "button", style = typography.button, color = colors.black)
+            Text(text = "body1", style = typography.body1, color = colors.black)
+            Text(text = "body2", style = typography.body2, color = colors.black)
+            Text(text = "caption1", style = typography.caption1, color = colors.black)
+            Text(text = "caption2", style = typography.caption2, color = colors.black)
         }
     }
 }
