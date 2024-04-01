@@ -51,18 +51,18 @@ fun PlaceBottomNav(
                     width = 2.dp,
                     brush = Brush.verticalGradient(
                         listOf(
-                            colors.grey2,
-                            colors.grey2,
-                            colors.grey1,
-                            colors.grey1,
-                            colors.grey1,
-                            colors.grey1,
-                            colors.grey1
+                            colors.grey9,
+                            colors.grey9,
+                            colors.grey10,
+                            colors.grey10,
+                            colors.grey10,
+                            colors.grey10,
+                            colors.grey10
                         )
                     ),
                     shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp)
                 )
-                .background(color = colors.grey1)
+                .background(color = colors.grey10)
                 .padding(
                     start = 32.dp,
                     end = 32.dp,
@@ -81,13 +81,13 @@ fun PlaceBottomNav(
                 ) {
                     Icon(
                         imageVector = ImageVector.vectorResource(id = it.icon),
-                        tint = if (currentTab == it) colors.white else colors.grey3,
+                        tint = if (currentTab == it) colors.white else colors.grey7,
                         contentDescription = "bottom nav ${it.title} icon",
                     )
                     Text(
                         text = it.title,
                         style = typography.caption2,
-                        color = if (currentTab == it) colors.white else colors.grey3
+                        color = if (currentTab == it) colors.white else colors.grey7
                     )
                 }
             }
