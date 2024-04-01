@@ -3,8 +3,10 @@ package com.place.designsystem
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -13,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.components.BottomNavTabs
+import com.place.designsystem.components.FilledButton
+import com.place.designsystem.components.OutlinedButton
 import com.place.designsystem.components.PlaceBottomNav
 import com.place.designsystem.icon.AgainIconLarge
 import com.place.designsystem.icon.AgainIconMedium
@@ -324,4 +328,30 @@ fun PlaceBottomNavPre() {
         currentTab = currentTab,
         onTabSelected = onTabSelected
     )
+}
+
+@Preview
+@Composable
+fun FilledButtonPre() {
+    PlaceTheme { _, typography ->
+        FilledButton(
+            shape = RoundedCornerShape(10.dp),
+            paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
+            content = { Text(text = "FilledButton", style = typography.body2) },
+            onClick = {}
+        )
+    }
+}
+
+@Preview
+@Composable
+fun OutlinedButtonPre() {
+    PlaceTheme { _, typography ->
+        OutlinedButton(
+            shape = RoundedCornerShape(10.dp),
+            paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
+            content = { Text(text = "OutlinedButton", style = typography.body2) },
+            onClick = {}
+        )
+    }
 }
