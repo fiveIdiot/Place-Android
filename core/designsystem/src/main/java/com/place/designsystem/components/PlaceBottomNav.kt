@@ -1,34 +1,43 @@
 package com.place.designsystem.components
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.icon.HomeIconLarge
-import com.place.designsystem.icon.PenIconLarge
-import com.place.designsystem.icon.PeopleIconLarge
-import com.place.designsystem.icon.PinIconLarge
-import com.place.designsystem.icon.ShoppingBagIconLarge
+import com.place.designsystem.R
 import com.place.designsystem.theme.PlaceTheme
 
-enum class BottomNavRoutes(val text: String) {
-    HOME("홈"),
-    MYPLACE("내 주변"),
-    WRITE("작성"),
-    SHOP("상점"),
-    PROFILE("프로필")
+enum class BottomNavTabs(
+    @DrawableRes
+    val icon: Int,
+    val title: String,
+    val routes: String,
+) {
+    HOME(R.drawable.ic_home_large, "홈", "HOME"),
+    MYPLACE(R.drawable.ic_pin_large, "내 주변", "MYPLACE"),
+    WRITE(R.drawable.ic_pen_large, "작성", "WRITE"),
+    SHOP(R.drawable.ic_shoppingbag_large, "상점", "SHOP"),
+    PROFILE(R.drawable.ic_people_large, "프로필", "PROFILE")
 }
 
 @Composable
-fun PlaceBottomNav() {
+fun PlaceBottomNav(
+    tabs: List<BottomNavTabs>,
+    currentTab: BottomNavTabs,
+    onTabSelected: (tab: BottomNavTabs) -> Unit
+) {
     PlaceTheme { colors, typography ->
         Row(
             modifier = Modifier
@@ -43,52 +52,25 @@ fun PlaceBottomNav() {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                HomeIconLarge()
-                Text(
-                    text = BottomNavRoutes.HOME.text,
-                    style = typography.caption2,
-                    color = colors.white
-                )
-            }
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                PinIconLarge()
-                Text(
-                    text = BottomNavRoutes.MYPLACE.text,
-                    style = typography.caption2,
-                    color = colors.white
-                )
-            }
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                PenIconLarge()
-                Text(
-                    text = BottomNavRoutes.WRITE.text,
-                    style = typography.caption2,
-                    color = colors.white
-                )
-            }
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                ShoppingBagIconLarge()
-                Text(
-                    text = BottomNavRoutes.SHOP.text,
-                    style = typography.caption2,
-                    color = colors.white
-                )
-            }
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                PeopleIconLarge()
-                Text(
-                    text = BottomNavRoutes.PROFILE.text,
-                    style = typography.caption2,
-                    color = colors.white
-                )
+            tabs.forEach {
+                Column(
+                    modifier = Modifier.clickable {
+                        onTabSelected(it)
+                    },
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(id = it.icon),
+                        tint = if (currentTab == it) colors.white else colors.grey3,
+                        contentDescription = "bottom nav ${it.title} icon",
+                    )
+                    Text(
+                        text = it.title,
+                        style = typography.caption2,
+                        color = if (currentTab == it) colors.white else colors.grey3
+                    )
+                }
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun PlaceBottomNavPre() {
-    PlaceBottomNav()
 }
