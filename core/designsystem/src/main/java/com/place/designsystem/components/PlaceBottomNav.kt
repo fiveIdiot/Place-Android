@@ -3,7 +3,6 @@ package com.place.designsystem.components
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,6 +20,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.R
+import com.place.designsystem.effects.bounceClickable
 import com.place.designsystem.theme.PlaceTheme
 
 enum class BottomNavTabs(
@@ -74,9 +74,10 @@ fun PlaceBottomNav(
         ) {
             tabs.forEach {
                 Column(
-                    modifier = Modifier.clickable {
-                        onTabSelected(it)
-                    },
+                    modifier = Modifier
+                        .bounceClickable {
+                            onTabSelected(it)
+                        },
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Icon(
