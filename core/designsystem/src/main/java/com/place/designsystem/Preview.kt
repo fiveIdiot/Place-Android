@@ -335,6 +335,7 @@ fun PlaceBottomNavPre() {
 fun FilledButtonPre() {
     PlaceTheme { _, typography ->
         PlaceFilledButton(
+            enabled = true,
             shape = RoundedCornerShape(10.dp),
             paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
             content = { Text(text = "FilledButton", style = typography.body2) },
@@ -348,6 +349,7 @@ fun FilledButtonPre() {
 fun OutlinedButtonPre() {
     PlaceTheme { _, typography ->
         PlaceOutlinedButton(
+            enabled = true,
             shape = RoundedCornerShape(10.dp),
             paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
             content = { Text(text = "OutlinedButton", style = typography.body2) },

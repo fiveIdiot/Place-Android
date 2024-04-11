@@ -17,6 +17,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 enum class ButtonState { Pressed, Idle }
 
 fun Modifier.effectClickable(
+    enabled: Boolean = true,
     effectEnable: Boolean = true,
     depth: Float = 0.9f,
     onClick: () -> Unit
@@ -34,6 +35,7 @@ fun Modifier.effectClickable(
                 scaleY = scale
             }
             .clickable(
+                enabled = enabled,
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
                 onClick = onClick

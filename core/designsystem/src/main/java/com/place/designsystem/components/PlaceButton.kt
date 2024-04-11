@@ -2,7 +2,6 @@ package com.place.designsystem.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -15,10 +14,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
+import com.place.designsystem.effects.effectClickable
 import com.place.designsystem.theme.PlaceTheme
 
 @Composable
 fun PlaceFilledButton(
+    enabled: Boolean,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
     paddingValues: PaddingValues = PaddingValues(5.dp),
@@ -28,9 +29,9 @@ fun PlaceFilledButton(
     PlaceTheme { colors, _ ->
         Row(
             modifier = modifier
+                .effectClickable(enabled = enabled, onClick = onClick)
                 .clip(shape = shape)
-                .clickable(onClick = onClick)
-                .background(color = colors.orange5)
+                .background(color = if (enabled) colors.orange5 else colors.grey8)
                 .padding(paddingValues = paddingValues),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
@@ -41,6 +42,7 @@ fun PlaceFilledButton(
 
 @Composable
 fun PlaceOutlinedButton(
+    enabled: Boolean,
     modifier: Modifier = Modifier,
     paddingValues: PaddingValues = PaddingValues(5.dp),
     shape: Shape = RectangleShape,
@@ -50,8 +52,8 @@ fun PlaceOutlinedButton(
     PlaceTheme { colors, _ ->
         Row(
             modifier = modifier
+                .effectClickable(enabled = enabled, onClick = onClick)
                 .clip(shape = shape)
-                .clickable(onClick = onClick)
                 .border(width = 1.dp, color = colors.grey10, shape = shape)
                 .padding(paddingValues = paddingValues),
             verticalAlignment = Alignment.CenterVertically,
