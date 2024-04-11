@@ -20,7 +20,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.R
-import com.place.designsystem.effects.bounceClickable
+import com.place.designsystem.effects.effectClickable
 import com.place.designsystem.theme.PlaceTheme
 
 enum class BottomNavTabs(
@@ -75,7 +75,7 @@ fun PlaceBottomNav(
             tabs.forEach {
                 Column(
                     modifier = Modifier
-                        .bounceClickable {
+                        .effectClickable {
                             onTabSelected(it)
                         },
                     horizontalAlignment = Alignment.CenterHorizontally

@@ -16,32 +16,44 @@ import androidx.compose.ui.input.pointer.pointerInput
 
 enum class ButtonState { Pressed, Idle }
 
-fun Modifier.bounceClickable(onClick: () -> Unit) = composed {
-    var buttonState by remember { mutableStateOf(ButtonState.Idle) }
-    val scale by animateFloatAsState(
-        if (buttonState == ButtonState.Pressed) 0.90f else 1f,
-        label = "bounce click effects"
-    )
+fun Modifier.effectClickable(
+    effectEnable: Boolean = true,
+    depth: Float = 0.9f,
+    onClick: () -> Unit
+) = composed {
+    if (effectEnable) {
+        var buttonState by remember { mutableStateOf(ButtonState.Idle) }
+        val scale by animateFloatAsState(
+            if (buttonState == ButtonState.Pressed) depth else 1f,
+            label = "bounce click effects"
+        )
 
-    this
-        .graphicsLayer {
-            scaleX = scale
-            scaleY = scale
-        }
-        .clickable(
+        this
+            .graphicsLayer {
+                scaleX = scale
+                scaleY = scale
+            }
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null,
+                onClick = onClick
+            )
+            .pointerInput(buttonState) {
+                awaitPointerEventScope {
+                    buttonState = if (buttonState == ButtonState.Pressed) {
+                        waitForUpOrCancellation()
+                        ButtonState.Idle
+                    } else {
+                        awaitFirstDown(false)
+                        ButtonState.Pressed
+                    }
+                }
+            }
+    } else {
+        this.clickable(
             interactionSource = remember { MutableInteractionSource() },
             indication = null,
             onClick = onClick
         )
-        .pointerInput(buttonState) {
-            awaitPointerEventScope {
-                buttonState = if (buttonState == ButtonState.Pressed) {
-                    waitForUpOrCancellation()
-                    ButtonState.Idle
-                } else {
-                    awaitFirstDown(false)
-                    ButtonState.Pressed
-                }
-            }
-        }
+    }
 }
