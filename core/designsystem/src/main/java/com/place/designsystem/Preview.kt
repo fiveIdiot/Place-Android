@@ -5,8 +5,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -18,6 +22,7 @@ import com.place.designsystem.components.BottomNavTabs
 import com.place.designsystem.components.PlaceFilledButton
 import com.place.designsystem.components.PlaceOutlinedButton
 import com.place.designsystem.components.PlaceBottomNav
+import com.place.designsystem.components.PlaceTextField
 import com.place.designsystem.icon.AgainIconLarge
 import com.place.designsystem.icon.AgainIconMedium
 import com.place.designsystem.icon.AgainIconSmall
@@ -53,6 +58,7 @@ import com.place.designsystem.icon.CurvedArrowIconLarge
 import com.place.designsystem.icon.CurvedArrowIconMedium
 import com.place.designsystem.icon.CurvedArrowIconSmall
 import com.place.designsystem.icon.CurvedArrowIconXLarge
+import com.place.designsystem.icon.FilledXMarkIconLarge
 import com.place.designsystem.icon.FilterIconLarge
 import com.place.designsystem.icon.FilterIconMedium
 import com.place.designsystem.icon.FilterIconSmall
@@ -354,6 +360,42 @@ fun OutlinedButtonPre() {
             paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
             content = { Text(text = "OutlinedButton", style = typography.body2) },
             onClick = {}
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PlaceTextFieldPre() {
+    val (value, onValueChange) = remember {
+        mutableStateOf("")
+    }
+
+    PlaceTheme { colors, typography ->
+        PlaceTextField(
+            modifier = Modifier.height(48.dp),
+            value = value,
+            isError = true,
+            errorMessage = "에러 메세지",
+            onValueChange = onValueChange,
+            placeHolder = {
+                Row {
+                    SearchIconLarge(color = colors.grey7)
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = "placeholder",
+                        style = typography.body2,
+                        color = colors.grey7
+                    )
+                }
+            },
+            trailingIcon = {
+                if (value.isNotEmpty()) {
+                    IconButton(onClick = { onValueChange("") }) {
+                        FilledXMarkIconLarge(color = colors.grey6)
+                    }
+                }
+            }
         )
     }
 }

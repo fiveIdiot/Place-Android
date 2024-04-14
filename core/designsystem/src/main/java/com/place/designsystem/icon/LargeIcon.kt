@@ -361,3 +361,16 @@ fun PinIconLarge(
         contentDescription = "PinIconLarge"
     )
 }
+
+@Composable
+fun FilledXMarkIconLarge(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
+) {
+    Icon(
+        modifier = modifier,
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_filledxmark_large),
+        contentDescription = "FilledXMarkIconLarge"
+    )
+}
