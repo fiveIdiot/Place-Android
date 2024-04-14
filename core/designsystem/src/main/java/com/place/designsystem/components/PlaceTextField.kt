@@ -27,6 +27,7 @@ import com.place.designsystem.theme.PlaceTheme
 fun PlaceTextField(
     modifier: Modifier = Modifier,
     value: String,
+    borderEnabled: Boolean = false,
     isError: Boolean = false,
     errorMessage: String = "",
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
@@ -85,7 +86,7 @@ fun PlaceTextField(
                                 errorContainerColor = colors.grey9,
 
                                 //border
-                                focusedBorderColor = colors.orange5,
+                                focusedBorderColor = if (borderEnabled) colors.orange5 else Color.Transparent,
                                 unfocusedBorderColor = Color.Transparent,
                                 errorBorderColor = colors.red5,
                             ),

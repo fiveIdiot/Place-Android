@@ -375,8 +375,6 @@ fun PlaceTextFieldPre() {
         PlaceTextField(
             modifier = Modifier.height(48.dp),
             value = value,
-            isError = true,
-            errorMessage = "에러 메세지",
             onValueChange = onValueChange,
             placeHolder = {
                 Row {
