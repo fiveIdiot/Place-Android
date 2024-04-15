@@ -3,13 +3,11 @@ package com.place.designsystem
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,9 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.components.BottomNavTabs
+import com.place.designsystem.components.PlaceBottomNav
 import com.place.designsystem.components.PlaceFilledButton
 import com.place.designsystem.components.PlaceOutlinedButton
-import com.place.designsystem.components.PlaceBottomNav
 import com.place.designsystem.components.PlaceTextField
 import com.place.designsystem.icon.AgainIconLarge
 import com.place.designsystem.icon.AgainIconMedium
@@ -342,8 +340,6 @@ fun FilledButtonPre() {
     PlaceTheme { _, typography ->
         PlaceFilledButton(
             enabled = true,
-            shape = RoundedCornerShape(10.dp),
-            paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
             content = { Text(text = "FilledButton", style = typography.body2) },
             onClick = {}
         )
@@ -356,8 +352,6 @@ fun OutlinedButtonPre() {
     PlaceTheme { _, typography ->
         PlaceOutlinedButton(
             enabled = true,
-            shape = RoundedCornerShape(10.dp),
-            paddingValues = PaddingValues(vertical = 5.dp, horizontal = 10.dp),
             content = { Text(text = "OutlinedButton", style = typography.body2) },
             onClick = {}
         )
