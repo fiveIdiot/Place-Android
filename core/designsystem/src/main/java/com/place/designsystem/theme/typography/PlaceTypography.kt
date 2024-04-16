@@ -72,12 +72,12 @@ object PlaceTypography {
     )
 
     @Stable
-    val button = TextStyle(
+    val subHeadline3 = TextStyle(
         fontFamily = notosanskr,
         fontSize = 16.sp,
         fontWeight = FontWeight.SemiBold,
-        lineHeight = 19.2.sp,
-        letterSpacing = (-0.64).sp,
+        lineHeight = (19.2).sp,
+        letterSpacing = (-0.8).sp,
         platformStyle = PlatformTextStyle(
             includeFontPadding = false
         )
@@ -96,11 +96,35 @@ object PlaceTypography {
     )
 
     @Stable
+    val body2SemiBold = TextStyle(
+        fontFamily = notosanskr,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 21.sp,
+        letterSpacing = (-0.28).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
+    )
+
+    @Stable
     val body2 = TextStyle(
         fontFamily = notosanskr,
         fontSize = 14.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 21.sp,
+        letterSpacing = (-0.28).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
+    )
+
+    @Stable
+    val tag = TextStyle(
+        fontFamily = notosanskr,
+        fontSize = 12.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 18.sp,
         letterSpacing = (-0.28).sp,
         platformStyle = PlatformTextStyle(
             includeFontPadding = false
@@ -123,6 +147,18 @@ object PlaceTypography {
         fontSize = 11.sp,
         fontWeight = FontWeight.Normal,
         lineHeight = 16.5.sp,
+        letterSpacing = (-0.22).sp,
+        platformStyle = PlatformTextStyle(
+            includeFontPadding = false
+        )
+    )
+
+    @Stable
+    val overLine = TextStyle(
+        fontFamily = notosanskr,
+        fontSize = 10.sp,
+        fontWeight = FontWeight.Medium,
+        lineHeight = 10.sp,
         letterSpacing = (-0.22).sp,
         platformStyle = PlatformTextStyle(
             includeFontPadding = false
