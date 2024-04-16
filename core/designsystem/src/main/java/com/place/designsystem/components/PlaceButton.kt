@@ -15,6 +15,7 @@ import com.place.designsystem.theme.PlaceTheme
 @Composable
 fun PlaceFilledButton(
     modifier: Modifier = Modifier,
+    containerColor: Color? = null,
     enabled: Boolean,
     content: @Composable (RowScope.() -> Unit),
     onClick: () -> Unit,
@@ -24,7 +25,7 @@ fun PlaceFilledButton(
             modifier = modifier,
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = colors.orange5,
+                containerColor = containerColor ?: colors.orange5,
                 disabledContainerColor = colors.grey8,
                 contentColor = colors.black,
                 disabledContentColor = colors.grey7
