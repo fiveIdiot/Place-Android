@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -18,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.components.BottomNavTabs
 import com.place.designsystem.components.PlaceBottomNav
+import com.place.designsystem.components.PlaceDialog
 import com.place.designsystem.components.PlaceFilledButton
 import com.place.designsystem.components.PlaceOutlinedButton
 import com.place.designsystem.components.PlaceTextField
@@ -124,11 +126,14 @@ fun TypoPreview() {
             Text(text = "headline2", style = typography.headline2, color = colors.black)
             Text(text = "subHeadline1", style = typography.subHeadline1, color = colors.black)
             Text(text = "subHeadline2", style = typography.subHeadline2, color = colors.black)
-            Text(text = "button", style = typography.button, color = colors.black)
+            Text(text = "subHeadline3", style = typography.subHeadline3, color = colors.black)
             Text(text = "body1", style = typography.body1, color = colors.black)
+            Text(text = "body2 semibold", style = typography.body2SemiBold, color = colors.black)
             Text(text = "body2", style = typography.body2, color = colors.black)
+            Text(text = "tag", style = typography.tag, color = colors.black)
             Text(text = "caption1", style = typography.caption1, color = colors.black)
             Text(text = "caption2", style = typography.caption2, color = colors.black)
+            Text(text = "overline", style = typography.overLine, color = colors.black)
         }
     }
 }
@@ -388,6 +393,21 @@ fun PlaceTextFieldPre() {
                     }
                 }
             }
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PlaceDialogPre() {
+    Column(modifier = Modifier.fillMaxSize()) {
+        PlaceDialog(
+            text = "선택하신 N개의 북마크를\n삭제하실건가요?",
+            outlineButtonText = "취소",
+            filledButtonText = "삭제",
+            outlinedButtonOnClick = {},
+            filledButtonOnClick = {},
+            onDismissRequest = {}
         )
     }
 }
