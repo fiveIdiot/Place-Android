@@ -328,14 +328,10 @@ fun SmallIconPreview() {
 @Preview
 @Composable
 fun PlaceBottomNavPre() {
-    val (currentTab, onTabSelected) = remember {
-        mutableStateOf(BottomNavTabs.HOME)
-    }
-
     PlaceBottomNav(
         tabs = BottomNavTabs.entries.toList(),
-        currentTab = currentTab,
-        onTabSelected = onTabSelected
+        currentTab = BottomNavTabs.HOME,
+        onTabSelected = {}
     )
 }
 

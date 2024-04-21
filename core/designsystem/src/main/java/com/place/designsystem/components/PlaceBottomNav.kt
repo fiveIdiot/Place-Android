@@ -33,14 +33,20 @@ enum class BottomNavTabs(
     MYPLACE(R.drawable.ic_pin_large, "내 주변", "MYPLACE"),
     WRITE(R.drawable.ic_pen_large, "작성", "WRITE"),
     SHOP(R.drawable.ic_shoppingbag_large, "상점", "SHOP"),
-    PROFILE(R.drawable.ic_people_large, "프로필", "PROFILE")
+    PROFILE(R.drawable.ic_people_large, "프로필", "PROFILE");
+
+    companion object {
+        fun find(route: String): BottomNavTabs {
+            return entries.find { it.routes == route } ?: HOME
+        }
+    }
 }
 
 @Composable
 fun PlaceBottomNav(
     tabs: List<BottomNavTabs>,
     currentTab: BottomNavTabs,
-    onTabSelected: (tab: BottomNavTabs) -> Unit
+    onTabSelected: (route: String) -> Unit,
 ) {
     PlaceTheme { colors, typography ->
         Row(
@@ -76,7 +82,7 @@ fun PlaceBottomNav(
                 Column(
                     modifier = Modifier
                         .effectClickable {
-                            onTabSelected(it)
+                            onTabSelected(it.routes)
                         },
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
