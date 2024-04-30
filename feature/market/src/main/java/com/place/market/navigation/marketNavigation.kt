@@ -1,4 +1,4 @@
-package com.place.around.navigation
+package com.place.market.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,18 +13,18 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 
-const val AROUND_ROUTE = "around_route"
+const val MARKET_ROUTE = "market_route"
 
-fun NavController.navigateToAround(navOptions: NavOptions) = navigate(AROUND_ROUTE, navOptions)
+fun NavController.navigateToMarket(navOptions: NavOptions) = navigate(MARKET_ROUTE, navOptions)
 
-fun NavGraphBuilder.aroundFeature() {
-    composable(route = AROUND_ROUTE) {
+fun NavGraphBuilder.marketFeature() {
+    composable(route = MARKET_ROUTE) {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "AROUND", color = Color.Black, fontSize = 32.sp)
+            Text(text = "MARKET", color = Color.Black, fontSize = 32.sp)
         }
     }
 }
