@@ -1,5 +1,6 @@
 package com.place.android
 
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -17,40 +18,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
+import com.place.android.navigation.BottomNavTabs
+import com.place.android.navigation.PlaceBottomNav
 import com.place.android.navigation.PlaceNavHost
-import com.place.designsystem.components.BottomNavTabs
-import com.place.designsystem.components.PlaceBottomNav
 import com.place.designsystem.theme.PlaceTheme
 
 @Composable
 fun PlaceApp(
-    navController: NavHostController,
-    startDestination: String,
-    backPressedState: BackPressedState,
-    currentTab: BottomNavTabs,
-    shouldShowBottomBar: Boolean,
-    onTabSelected: (route: String) -> Unit,
+    appState: PlaceAppState,
+    snackbarHostState: SnackbarHostState
 ) {
-    val snackbarHostState = remember { SnackbarHostState() }
-
-    LaunchedEffect(key1 = backPressedState) {
-        if (backPressedState == BackPressedState.Single) {
-            snackbarHostState.showSnackbar("한번 더 클릭하면 앱이 종료됩니다.")
-        }
-    }
-
     PlaceTheme { colors, typography ->
         Scaffold(
             modifier = Modifier,
             containerColor = Color.Transparent,
             contentColor = Color.Transparent,
             bottomBar = {
-                AnimatedVisibility(visible = shouldShowBottomBar) {
+                AnimatedVisibility(visible = appState.shouldShowBottomBar) {
                     PlaceBottomNav(
-                        tabs = BottomNavTabs.entries.toList(),
-                        currentTab = currentTab,
-                        onTabSelected = onTabSelected
+                        tabs = appState.topLevelDestinations,
+                        currentTab = appState.currentTopLevelDestination ?: BottomNavTabs.HOME,
+                        onTabSelected = {
+                            Log.d("logtag", it.toString())
+                            appState.navigateToTopLevelDestination(it)
+                        }
                     )
                 }
             },
@@ -79,9 +70,7 @@ fun PlaceApp(
         ) { padding ->
             PlaceNavHost(
                 modifier = Modifier.padding(padding),
-                navController = navController,
-                startDestination = startDestination,
-                onTabSelected = onTabSelected
+                appState = appState
             )
         }
     }

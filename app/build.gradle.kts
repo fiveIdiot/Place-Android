@@ -1,6 +1,6 @@
 plugins {
     id("com.place.android.application")
-    alias(libs.plugins.kotlin.android)
+    id("com.place.android.application.compose")
 }
 
 android {
@@ -9,9 +9,6 @@ android {
     defaultConfig {
         versionCode = 1
         versionName = "1.0"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -23,29 +20,15 @@ android {
             )
         }
     }
-
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
 }
 
 dependencies {
     implementation(project(":core:designsystem"))
+    implementation(project(":feature:home"))
+    implementation(project(":feature:write"))
+    implementation(project(":feature:around"))
+    implementation(project(":feature:market"))
+    implementation(project(":feature:profile"))
 
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

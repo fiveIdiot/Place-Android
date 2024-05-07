@@ -1,6 +1,5 @@
-package com.place.designsystem.components
+package com.place.android.navigation
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -19,34 +18,14 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.R
 import com.place.designsystem.effects.effectClickable
 import com.place.designsystem.theme.PlaceTheme
-
-enum class BottomNavTabs(
-    @DrawableRes
-    val icon: Int,
-    val title: String,
-    val routes: String,
-) {
-    HOME(R.drawable.ic_home_large, "홈", "HOME"),
-    MYPLACE(R.drawable.ic_pin_large, "내 주변", "MYPLACE"),
-    WRITE(R.drawable.ic_pen_large, "작성", "WRITE"),
-    SHOP(R.drawable.ic_shoppingbag_large, "상점", "SHOP"),
-    PROFILE(R.drawable.ic_people_large, "프로필", "PROFILE");
-
-    companion object {
-        fun find(route: String): BottomNavTabs {
-            return entries.find { it.routes == route } ?: HOME
-        }
-    }
-}
 
 @Composable
 fun PlaceBottomNav(
     tabs: List<BottomNavTabs>,
     currentTab: BottomNavTabs,
-    onTabSelected: (route: String) -> Unit,
+    onTabSelected: (tab: BottomNavTabs) -> Unit,
 ) {
     PlaceTheme { colors, typography ->
         Row(
@@ -82,7 +61,7 @@ fun PlaceBottomNav(
                 Column(
                     modifier = Modifier
                         .effectClickable {
-                            onTabSelected(it.routes)
+                            onTabSelected(it)
                         },
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
