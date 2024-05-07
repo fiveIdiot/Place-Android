@@ -17,8 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.components.BottomNavTabs
-import com.place.designsystem.components.PlaceBottomNav
 import com.place.designsystem.components.PlaceDialog
 import com.place.designsystem.components.PlaceFilledButton
 import com.place.designsystem.components.PlaceOutlinedButton
@@ -323,16 +321,6 @@ fun SmallIconPreview() {
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun PlaceBottomNavPre() {
-    PlaceBottomNav(
-        tabs = BottomNavTabs.entries.toList(),
-        currentTab = BottomNavTabs.HOME,
-        onTabSelected = {}
-    )
 }
 
 @Preview
