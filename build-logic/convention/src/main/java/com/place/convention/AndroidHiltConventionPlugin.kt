@@ -11,12 +11,12 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("dagger.hilt.android.plugin")
-                apply("com.google.devtools.ksp")
+                apply("kotlin-kapt")
             }
 
             dependencies {
                 "implementation"(libs.findLibrary("hilt.android").get())
-                "ksp"(libs.findLibrary("hilt.android.compiler").get())
+                "kapt"(libs.findLibrary("hilt.android.compiler").get())
             }
         }
     }
