@@ -363,3 +363,16 @@ fun PinIconMedium(
         contentDescription = "PinIconLarge"
     )
 }
+
+@Composable
+fun FireIconMedium(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
+) {
+    Icon(
+        modifier = modifier,
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_normal_fire),
+        contentDescription = "FireIconLarge"
+    )
+}
