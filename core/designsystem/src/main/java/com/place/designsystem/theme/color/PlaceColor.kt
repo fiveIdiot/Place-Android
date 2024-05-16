@@ -19,6 +19,7 @@ abstract class PlaceColor {
     abstract val grey8: Color
     abstract val grey9: Color
     abstract val grey10: Color
+    abstract val grey11: Color
 
     // orange
     abstract val orange1: Color

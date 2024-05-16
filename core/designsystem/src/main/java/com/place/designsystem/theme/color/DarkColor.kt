@@ -14,8 +14,9 @@ internal object DarkColor : PlaceColor() {
     override val grey6: Color = Color(0xFF959597)
     override val grey7: Color = Color(0xFF6E6E70)
     override val grey8: Color = Color(0xFF454547)
-    override val grey9: Color = Color(0xFF212123)
-    override val grey10: Color = Color(0xFF141416)
+    override val grey9: Color = Color(0xFF333336)
+    override val grey10: Color = Color(0xFF212123)
+    override val grey11: Color = Color(0xFF141416)
 
     override val orange1: Color = Color(0xFFFCEBD9)
     override val orange2: Color = Color(0xFFFFD0A6)
