@@ -25,11 +25,16 @@ import com.place.designsystem.theme.PlaceTheme
 
 @Composable
 fun CurationChips(
-    isCustomToggleSelected: Boolean,
-    isHotPlaceToggleSelected: Boolean,
-    onCustomToggleClick: () -> Unit,
-    onHotPlaceToggleClick: () -> Unit,
+    onCustomToggleSelected: (isSelected: Boolean) -> Unit,
+    onHotPlaceToggleSelected: (isSelected: Boolean) -> Unit,
 ) {
+    var isCustomToggleSelected by remember {
+        mutableStateOf(true)
+    }
+    var isHotPlaceToggleSelected by remember {
+        mutableStateOf(false)
+    }
+
     PlaceTheme { colors, typography ->
         Row(
             modifier = Modifier
@@ -57,7 +62,14 @@ fun CurationChips(
                         Color(0xFF1DBBFF)
                     )
                 ),
-                onClick = onCustomToggleClick
+                onClick = {
+                    if (!isCustomToggleSelected) {
+                        onCustomToggleSelected(true)
+                        onHotPlaceToggleSelected(false)
+                        isCustomToggleSelected = true
+                        isHotPlaceToggleSelected = false
+                    }
+                }
             )
             GradientChip(
                 isSelected = isHotPlaceToggleSelected,
@@ -79,7 +91,14 @@ fun CurationChips(
                         Color(0xFFEB00FF)
                     )
                 ),
-                onClick = onHotPlaceToggleClick
+                onClick = {
+                    if (!isHotPlaceToggleSelected) {
+                        onCustomToggleSelected(false)
+                        onHotPlaceToggleSelected(true)
+                        isCustomToggleSelected = false
+                        isHotPlaceToggleSelected = true
+                    }
+                }
             )
         }
     }
@@ -88,17 +107,8 @@ fun CurationChips(
 @Preview
 @Composable
 fun CurationChipsPre() {
-    var selected1 by remember {
-        mutableStateOf(false)
-    }
-    var selected2 by remember {
-        mutableStateOf(false)
-    }
-
     CurationChips(
-        isCustomToggleSelected = selected1,
-        isHotPlaceToggleSelected = selected2,
-        onCustomToggleClick = { selected1 = !selected1 },
-        onHotPlaceToggleClick = { selected2 = !selected2 }
+        onCustomToggleSelected = {},
+        onHotPlaceToggleSelected = {}
     )
 }
