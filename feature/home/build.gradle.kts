@@ -24,4 +24,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     implementation(libs.coil.kt)
+    implementation(libs.airbnb.lottie.compose)
 }

@@ -1,14 +1,17 @@
 package com.place.home.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -17,17 +20,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.icon.CompassIconMedium
-import com.place.designsystem.icon.FireIconMedium
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieClipSpec
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.rememberLottieAnimatable
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.place.designsystem.theme.PlaceTheme
+import com.place.home.R
 
 @Composable
 fun CurationChips(
     onCustomToggleSelected: (isSelected: Boolean) -> Unit,
     onHotPlaceToggleSelected: (isSelected: Boolean) -> Unit,
 ) {
+    val compossLottieComposition by rememberLottieComposition(
+        LottieCompositionSpec.RawRes(R.raw.compass_animation)
+    )
+    val compassLottieAnimatable = rememberLottieAnimatable()
+
+    val fireLottieComposition by rememberLottieComposition(
+        LottieCompositionSpec.RawRes(R.raw.fire_animation)
+    )
+    val fireLottieAnimatable = rememberLottieAnimatable()
+
     var isCustomToggleSelected by remember {
         mutableStateOf(true)
     }
@@ -35,10 +53,39 @@ fun CurationChips(
         mutableStateOf(false)
     }
 
+    LaunchedEffect(isCustomToggleSelected) {
+        compassLottieAnimatable.apply {
+            if (isCustomToggleSelected) {
+                animate(
+                    composition = compossLottieComposition,
+                    clipSpec = LottieClipSpec.Frame(0, 1200),
+                    initialProgress = 0f
+                )
+            } else {
+                snapTo(compossLottieComposition, 0f)
+            }
+        }
+    }
+
+    LaunchedEffect(isHotPlaceToggleSelected) {
+        fireLottieAnimatable.apply {
+            if (isHotPlaceToggleSelected) {
+                animate(
+                    composition = fireLottieComposition,
+                    clipSpec = LottieClipSpec.Frame(0, 1200),
+                    initialProgress = 0f
+                )
+            } else {
+                snapTo(compossLottieComposition, 0f)
+            }
+        }
+    }
+
     PlaceTheme { colors, typography ->
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .background(color = colors.grey11)
                 .padding(horizontal = 16.dp, vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
@@ -46,7 +93,12 @@ fun CurationChips(
                 isSelected = isCustomToggleSelected,
                 content = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        CompassIconMedium(color = if (isCustomToggleSelected) colors.white else colors.grey5)
+                        LottieAnimation(
+                            modifier = Modifier.size(20.dp),
+                            composition = compossLottieComposition,
+                            progress = { compassLottieAnimatable.progress },
+                            contentScale = ContentScale.FillHeight
+                        )
                         Spacer(modifier = Modifier.width(2.dp))
                         Text(
                             text = "맞춤",
@@ -75,7 +127,12 @@ fun CurationChips(
                 isSelected = isHotPlaceToggleSelected,
                 content = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        FireIconMedium(color = if (isHotPlaceToggleSelected) colors.white else colors.grey5)
+                        LottieAnimation(
+                            modifier = Modifier.size(20.dp),
+                            composition = fireLottieComposition,
+                            progress = { fireLottieAnimatable.progress },
+                            contentScale = ContentScale.FillHeight
+                        )
                         Spacer(modifier = Modifier.width(2.dp))
                         Text(
                             text = "핫플",

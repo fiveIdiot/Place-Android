@@ -41,6 +41,9 @@ hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-comp
 # coil
 coil-kt = { group = "io.coil-kt", name = "coil-compose", version = "2.6.0" }
 
+# lottie
+airbnb-lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version = "6.4.0" }
+
 # ktor
 ktor-client-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
