@@ -18,7 +18,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,19 +35,20 @@ fun CurationChips(
     onCustomToggleSelected: (isSelected: Boolean) -> Unit,
     onHotPlaceToggleSelected: (isSelected: Boolean) -> Unit,
 ) {
-    val compossLottieComposition by rememberLottieComposition(
+    // compass
+    val compassLottieComposition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(R.raw.compass_animation)
     )
     val compassLottieAnimatable = rememberLottieAnimatable()
+    var isCustomToggleSelected by remember {
+        mutableStateOf(true)
+    }
 
+    // fire
     val fireLottieComposition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(R.raw.fire_animation)
     )
     val fireLottieAnimatable = rememberLottieAnimatable()
-
-    var isCustomToggleSelected by remember {
-        mutableStateOf(true)
-    }
     var isHotPlaceToggleSelected by remember {
         mutableStateOf(false)
     }
@@ -57,12 +57,12 @@ fun CurationChips(
         compassLottieAnimatable.apply {
             if (isCustomToggleSelected) {
                 animate(
-                    composition = compossLottieComposition,
+                    composition = compassLottieComposition,
                     clipSpec = LottieClipSpec.Frame(0, 1200),
                     initialProgress = 0f
                 )
             } else {
-                snapTo(compossLottieComposition, 0f)
+                snapTo(compassLottieComposition, 0f)
             }
         }
     }
@@ -76,7 +76,7 @@ fun CurationChips(
                     initialProgress = 0f
                 )
             } else {
-                snapTo(compossLottieComposition, 0f)
+                snapTo(compassLottieComposition, 0f)
             }
         }
     }
@@ -95,7 +95,7 @@ fun CurationChips(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         LottieAnimation(
                             modifier = Modifier.size(20.dp),
-                            composition = compossLottieComposition,
+                            composition = compassLottieComposition,
                             progress = { compassLottieAnimatable.progress },
                             contentScale = ContentScale.FillHeight
                         )
@@ -108,11 +108,9 @@ fun CurationChips(
                     }
                 },
                 paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
-                gradient = Brush.linearGradient(
-                    listOf(
-                        Color(0xFFC51FFF),
-                        Color(0xFF1DBBFF)
-                    )
+                gradient = listOf(
+                    Color(0xFFC51FFF),
+                    Color(0xFF1DBBFF)
                 ),
                 onClick = {
                     if (!isCustomToggleSelected) {
@@ -142,11 +140,9 @@ fun CurationChips(
                     }
                 },
                 paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
-                gradient = Brush.linearGradient(
-                    listOf(
-                        Color(0xFFFF3D00),
-                        Color(0xFFEB00FF)
-                    )
+                gradient = listOf(
+                    Color(0xFFFF3D00),
+                    Color(0xFFEB00FF)
                 ),
                 onClick = {
                     if (!isHotPlaceToggleSelected) {
