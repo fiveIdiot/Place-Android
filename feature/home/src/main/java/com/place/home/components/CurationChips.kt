@@ -94,20 +94,20 @@ fun CurationChips(
                 content = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         LottieAnimation(
-                            modifier = Modifier.size(20.dp),
+                            modifier = Modifier.size(24.dp),
                             composition = compassLottieComposition,
                             progress = { compassLottieAnimatable.progress },
                             contentScale = ContentScale.FillHeight
                         )
-                        Spacer(modifier = Modifier.width(2.dp))
+                        Spacer(modifier = Modifier.width(4.dp))
                         Text(
                             text = "맞춤",
-                            style = typography.subHeadline3,
+                            style = typography.subHeadline2,
                             color = if (isCustomToggleSelected) colors.white else colors.grey5
                         )
                     }
                 },
-                paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
+                paddingValues = PaddingValues(vertical = 10.dp, horizontal = 16.dp),
                 gradient = listOf(
                     Color(0xFFC51FFF),
                     Color(0xFF1DBBFF)
@@ -126,20 +126,20 @@ fun CurationChips(
                 content = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         LottieAnimation(
-                            modifier = Modifier.size(20.dp),
+                            modifier = Modifier.size(24.dp),
                             composition = fireLottieComposition,
                             progress = { fireLottieAnimatable.progress },
                             contentScale = ContentScale.FillHeight
                         )
-                        Spacer(modifier = Modifier.width(2.dp))
+                        Spacer(modifier = Modifier.width(4.dp))
                         Text(
                             text = "핫플",
-                            style = typography.subHeadline3,
+                            style = typography.subHeadline2,
                             color = if (isHotPlaceToggleSelected) colors.white else colors.grey5
                         )
                     }
                 },
-                paddingValues = PaddingValues(vertical = 8.dp, horizontal = 16.dp),
+                paddingValues = PaddingValues(vertical = 10.dp, horizontal = 16.dp),
                 gradient = listOf(
                     Color(0xFFFF3D00),
                     Color(0xFFEB00FF)

@@ -32,7 +32,7 @@ fun GradientChip(
     onClick: () -> Unit,
 ) {
     val progress = remember { Animatable(-0.7f) }
-    val animationIterations = 2 // 애니메이션 반복 횟수 지정
+    val animationIterations = 1 // 애니메이션 반복 횟수 지정
 
     LaunchedEffect(isSelected) {
         if (isSelected) {
@@ -40,14 +40,14 @@ fun GradientChip(
                 progress.animateTo(
                     targetValue = 0.7f,
                     animationSpec = tween(
-                        durationMillis = 3000,
+                        durationMillis = 1500,
                         easing = LinearEasing
                     )
                 )
                 progress.animateTo(
                     targetValue = -0.7f,
                     animationSpec = tween(
-                        durationMillis = 3000,
+                        durationMillis = 1500,
                         easing = LinearEasing
                     )
                 )
@@ -55,7 +55,7 @@ fun GradientChip(
             progress.animateTo(
                 targetValue = 0f,
                 animationSpec = tween(
-                    durationMillis = 3000,
+                    durationMillis = 750,
                     easing = LinearEasing
                 )
             )
