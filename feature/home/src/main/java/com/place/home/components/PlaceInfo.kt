@@ -23,13 +23,14 @@ import com.place.designsystem.theme.PlaceTheme
 
 @Composable
 fun PlaceInfo(
+    modifier: Modifier = Modifier,
     placeName: String,
     hashTag: String,
     onContainerClick: () -> Unit,
 ) {
     PlaceTheme { colors, typography ->
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(12.dp))
                 .background(colors.grey10)
