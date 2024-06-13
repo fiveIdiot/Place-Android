@@ -374,3 +374,29 @@ fun FilledXMarkIconLarge(
         contentDescription = "FilledXMarkIconLarge"
     )
 }
+
+@Composable
+fun TwinkleIconLarge(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
+) {
+    Icon(
+        modifier = modifier,
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_twinkle_normal),
+        contentDescription = "TwinkleIconLarge"
+    )
+}
+
+@Composable
+fun TwinkleFilledIconLarge(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
+) {
+    Icon(
+        modifier = modifier,
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_twinkle_normal_filled),
+        contentDescription = "TwinkleFilledIconLarge"
+    )
+}

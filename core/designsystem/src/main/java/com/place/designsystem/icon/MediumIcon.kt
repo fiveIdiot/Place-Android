@@ -1,6 +1,7 @@
 package com.place.designsystem.icon
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -8,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.dp
 import com.place.designsystem.R
 import com.place.designsystem.theme.color.DarkColor
 import com.place.designsystem.theme.color.LightColor
@@ -361,5 +363,31 @@ fun PinIconMedium(
         tint = color,
         imageVector = ImageVector.vectorResource(id = R.drawable.ic_pin_medium),
         contentDescription = "PinIconLarge"
+    )
+}
+
+@Composable
+fun FireIconMedium(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
+) {
+    Icon(
+        modifier = modifier,
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_normal_fire),
+        contentDescription = "FireIconLarge"
+    )
+}
+
+@Composable
+fun ChevronRightIconMedium(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
+) {
+    Icon(
+        modifier = modifier.size(20.dp),
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_chevronright),
+        contentDescription = "ChevronRightIconMedium"
     )
 }

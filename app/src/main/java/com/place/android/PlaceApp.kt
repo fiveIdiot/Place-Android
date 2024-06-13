@@ -61,7 +61,7 @@ fun PlaceApp(
                             Text(
                                 text = "한번 더 누르면 앱이 종료됩니다.",
                                 style = typography.body2SemiBold,
-                                color = colors.grey1
+                                color = colors.grey2
                             )
                         }
                     }
