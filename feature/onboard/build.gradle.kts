@@ -1,6 +1,7 @@
 plugins {
     id("com.place.android.library")
     id("com.place.android.library.compose")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -25,4 +26,12 @@ dependencies {
 
     // kakao
     implementation(libs.kakao.sdk.v2.user)
+
+    // firebase
+    implementation(platform(libs.google.firebase.bom))
+    implementation(libs.google.firebase.analytics)
+    implementation(libs.google.firebase.auth.ktx)
+
+    // google
+    implementation(libs.google.android.gms.play.services.auth)
 }
