@@ -391,3 +391,16 @@ fun ChevronRightIconMedium(
         contentDescription = "ChevronRightIconMedium"
     )
 }
+
+@Composable
+fun ArrowLeftIcon(
+    modifier: Modifier = Modifier,
+    color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white
+) {
+    Icon(
+        modifier = modifier,
+        tint = color,
+        imageVector = ImageVector.vectorResource(id = R.drawable.ic_arrow_left),
+        contentDescription = "ArrowLeftIcon"
+    )
+}
