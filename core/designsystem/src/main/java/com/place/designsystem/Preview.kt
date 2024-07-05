@@ -21,6 +21,7 @@ import com.place.designsystem.components.PlaceDialog
 import com.place.designsystem.components.PlaceFilledButton
 import com.place.designsystem.components.PlaceOutlinedButton
 import com.place.designsystem.components.PlaceTextField
+import com.place.designsystem.components.PlaceTopBar
 import com.place.designsystem.icon.AgainIconLarge
 import com.place.designsystem.icon.AgainIconMedium
 import com.place.designsystem.icon.AgainIconSmall
@@ -395,4 +396,10 @@ fun PlaceDialogPre() {
             onDismissRequest = {}
         )
     }
+}
+
+@Preview
+@Composable
+fun PlaceTopBarPre() {
+    PlaceTopBar(title = "플레이스 TopBar")
 }
