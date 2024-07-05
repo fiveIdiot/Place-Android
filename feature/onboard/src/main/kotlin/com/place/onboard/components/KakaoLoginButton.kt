@@ -40,8 +40,8 @@ fun KakaoLoginButton(
             ) {
                 Image(
                     modifier = Modifier.align(Alignment.CenterStart),
-                    imageVector = ImageVector.vectorResource(R.drawable.ic_symbol_google),
-                    contentDescription = "Google Symbol"
+                    imageVector = ImageVector.vectorResource(R.drawable.ic_symbol_kakao),
+                    contentDescription = "Kakao Symbol"
                 )
                 Text(
                     modifier = Modifier.align(Alignment.Center),
