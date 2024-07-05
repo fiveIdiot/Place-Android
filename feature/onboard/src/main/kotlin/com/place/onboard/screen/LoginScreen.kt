@@ -45,7 +45,7 @@ fun LoginScreen() {
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "간편 로그인으로\n1분만에 가입하세요.",
+                    text = "간편 로그인으로\n간단하게",
                     style = typography.headline2,
                     color = colors.white
                 )
