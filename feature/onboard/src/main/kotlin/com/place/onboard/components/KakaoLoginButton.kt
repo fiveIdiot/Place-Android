@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,7 +21,7 @@ import com.place.designsystem.theme.PlaceTheme
 import com.place.onboard.R
 
 @Composable
-fun GoogleLoginButton(
+fun KakaoLoginButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
@@ -28,7 +29,7 @@ fun GoogleLoginButton(
         Button(
             modifier = modifier.height(48.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = colors.white
+                containerColor = Color(0xFFFFCD00)
             ),
             shape = RoundedCornerShape(8.dp),
             contentPadding = PaddingValues(vertical = 12.dp, horizontal = 16.dp),
@@ -44,7 +45,7 @@ fun GoogleLoginButton(
                 )
                 Text(
                     modifier = Modifier.align(Alignment.Center),
-                    text = "구글로 시작하기",
+                    text = "카카오로 시작하기",
                     style = typography.subHeadline3,
                     color = colors.black
                 )
@@ -55,6 +56,6 @@ fun GoogleLoginButton(
 
 @Preview
 @Composable
-fun GoogleLoginButtonPre() {
-    GoogleLoginButton {}
+fun KakaoLoginButtonPre() {
+    KakaoLoginButton {}
 }
