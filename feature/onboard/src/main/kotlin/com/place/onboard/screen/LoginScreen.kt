@@ -19,7 +19,6 @@ import com.place.designsystem.theme.PlaceTheme
 import com.place.onboard.components.GoogleLoginButton
 import com.place.onboard.components.KakaoLoginButton
 
-@Preview
 @Composable
 fun LoginScreen() {
     PlaceTheme { colors, typography ->
@@ -56,4 +55,10 @@ fun LoginScreen() {
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun LoginScreenPre() {
+    LoginScreen()
 }
