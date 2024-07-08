@@ -33,7 +33,7 @@ fun PlaceFilledButton(
             enabled = enabled,
             content = content,
             onClick = onClick,
-            contentPadding = PaddingValues(vertical = 4.dp, horizontal = 8.dp)
+            contentPadding = PaddingValues(vertical = 14.5.dp, horizontal = 8.dp)
         )
     }
 }

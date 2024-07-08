@@ -13,14 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.place.designsystem.components.PlaceFilledButton
+import com.place.designsystem.components.PlaceTextField
 import com.place.designsystem.components.PlaceTopBar
 import com.place.designsystem.icon.ArrowLeftIcon
 import com.place.designsystem.theme.PlaceTheme
-import com.place.onboard.components.GoogleLoginButton
-import com.place.onboard.components.KakaoLoginButton
 
 @Composable
-fun LoginScreen() {
+fun NickNameInputScreen() {
     PlaceTheme { colors, typography ->
         Scaffold(
             containerColor = colors.black,
@@ -44,14 +44,35 @@ fun LoginScreen() {
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "간편 로그인으로\n간단하게",
+                    text = "검사 전 사용하실 닉네임을\n입력해주세요",
                     style = typography.headline2,
                     color = colors.white
                 )
                 Spacer(modifier = Modifier.height(32.dp))
-                GoogleLoginButton(modifier = Modifier.fillMaxWidth()) {}
-                Spacer(modifier = Modifier.height(12.dp))
-                KakaoLoginButton(modifier = Modifier.fillMaxWidth()) {}
+                PlaceTextField(
+                    value = "",
+                    placeHolder = {
+                        Text(
+                            text = "닉네임을 입력해주세요.",
+                            style = typography.body2,
+                            color = colors.grey7
+                        )
+                    },
+                    onValueChange = {}
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                PlaceFilledButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = true,
+                    content = {
+                        Text(
+                            text = "다음",
+                            style = typography.subHeadline3,
+                            color = colors.black
+                        )
+                    },
+                    onClick = {}
+                )
             }
         }
     }
@@ -59,6 +80,6 @@ fun LoginScreen() {
 
 @Preview
 @Composable
-fun LoginScreenPre() {
-    LoginScreen()
+fun NickNameInputScreenPre() {
+    NickNameInputScreen()
 }
