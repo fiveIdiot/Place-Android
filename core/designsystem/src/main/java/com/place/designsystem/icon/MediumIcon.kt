@@ -385,7 +385,7 @@ fun ChevronRightIconMedium(
     color: Color = if (isSystemInDarkTheme()) DarkColor.white else LightColor.white,
 ) {
     Icon(
-        modifier = modifier.size(20.dp),
+        modifier = modifier,
         tint = color,
         imageVector = ImageVector.vectorResource(id = R.drawable.ic_chevronright),
         contentDescription = "ChevronRightIconMedium"
