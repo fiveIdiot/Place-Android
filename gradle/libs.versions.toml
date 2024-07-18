@@ -3,7 +3,7 @@ androidxComposeCompiler = "1.5.0"
 androidGradlePlugin = "8.2.2"
 ktor = "2.3.4"
 kotlin = "1.9.0"
-hilt = "2.44"
+hilt = "2.48"
 googleAccompanistPager = "0.28.0"
 
 [libraries]

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -18,8 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.effects.effectClickable
-import com.place.designsystem.icon.ChevronRightIconMedium
-import com.place.designsystem.icon.PinIconLarge
+import com.place.designsystem.icon.ChevronRightIcon
+import com.place.designsystem.icon.PinFillIcon
 import com.place.designsystem.theme.PlaceTheme
 
 @Composable
@@ -42,7 +41,10 @@ fun PlaceInfo(
                 modifier = Modifier.align(Alignment.CenterStart),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                PinIconLarge(color = colors.orange5)
+                PinFillIcon(
+                    size = 24.dp,
+                    color = colors.orange5
+                )
                 Spacer(modifier = Modifier.width(6.dp))
                 Column {
                     Text(
@@ -58,10 +60,10 @@ fun PlaceInfo(
                     )
                 }
             }
-            ChevronRightIconMedium(
+            ChevronRightIcon(
                 modifier = Modifier
-                    .align(Alignment.CenterEnd)
-                    .size(20.dp)
+                    .align(Alignment.CenterEnd),
+                size = 20.dp
             )
         }
     }

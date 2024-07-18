@@ -19,8 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.icon.BookmarkIconLarge
-import com.place.designsystem.icon.ShareIconLarge
+import com.place.designsystem.icon.BookMarkIcon
+import com.place.designsystem.icon.ShareIcon
 import com.place.designsystem.theme.PlaceTheme
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -79,14 +79,14 @@ fun PlaceItem(
                         modifier = Modifier.size(24.dp),
                         onClick = onShareIconClick
                     ) {
-                        ShareIconLarge()
+                        ShareIcon(size = 24.dp)
                     }
                     Spacer(modifier = Modifier.width(16.dp))
                     IconButton(
                         modifier = Modifier.size(24.dp),
                         onClick = onBookMarkIconClick
                     ) {
-                        BookmarkIconLarge()
+                        BookMarkIcon(size = 24.dp)
                     }
                 }
             }
