@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.icon.TwinkleFilledIconLarge
-import com.place.designsystem.icon.TwinkleIconLarge
+import com.place.designsystem.icon.TwinkleFillIcon
+import com.place.designsystem.icon.TwinkleIcon
 import com.place.designsystem.theme.PlaceTheme
 
 @Composable
@@ -27,9 +27,9 @@ fun PlaceTwinkle(
                 onClick = onTwinkleClick
             ) {
                 if (isTwinkleClicked) {
-                    TwinkleFilledIconLarge()
+                    TwinkleFillIcon(size = 24.dp)
                 } else {
-                    TwinkleIconLarge()
+                    TwinkleIcon(size = 24.dp)
                 }
             }
             Spacer(modifier = Modifier.width(4.dp))

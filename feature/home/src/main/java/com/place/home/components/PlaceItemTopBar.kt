@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.place.designsystem.icon.MeatballIconLarge
+import com.place.designsystem.icon.MeatBallIcon
 import com.place.designsystem.theme.PlaceTheme
 
 @Composable
@@ -65,7 +65,7 @@ fun PlaceItemTopBar(
                     .size(24.dp)
                     .align(Alignment.CenterEnd),
                 onClick = onMealBallIconClick,
-                content = { MeatballIconLarge() }
+                content = { MeatBallIcon(size = 24.dp) }
             )
         }
     }

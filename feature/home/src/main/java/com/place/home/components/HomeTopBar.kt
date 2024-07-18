@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,8 +16,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.place.designsystem.icon.FilterIconLarge
-import com.place.designsystem.icon.SearchIconLarge
+import com.place.designsystem.icon.FilterIcon
+import com.place.designsystem.icon.SearchIcon
 import com.place.designsystem.theme.PlaceTheme
 import com.place.home.R
 
@@ -46,12 +45,12 @@ fun HomeTopBar(
                 IconButton(
                     modifier = Modifier.size(24.dp),
                     onClick = onFilterButtonClick,
-                    content = { FilterIconLarge() }
+                    content = { FilterIcon(size = 24.dp) }
                 )
                 IconButton(
                     modifier = Modifier.size(24.dp),
                     onClick = onSearchButtonClick,
-                    content = { SearchIconLarge() }
+                    content = { SearchIcon(size = 24.dp) }
                 )
             }
         }
