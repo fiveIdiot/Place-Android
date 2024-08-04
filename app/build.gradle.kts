@@ -1,6 +1,7 @@
 plugins {
     id("com.place.android.application")
     id("com.place.android.application.compose")
+    id("com.place.android.hilt")
 }
 
 android {
@@ -43,10 +44,6 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-
-    // hilt
-    implementation(libs.hilt.android.compiler)
-    implementation(libs.hilt.android)
 
     // kakao
     implementation(libs.kakao.sdk.v2.user)
