@@ -34,4 +34,7 @@ dependencies {
 
     // google
     implementation(libs.google.android.gms.play.services.auth)
+
+    // coil
+    implementation(libs.coil.kt)
 }
