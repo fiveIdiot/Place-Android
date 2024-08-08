@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.place.designsystem.theme.PlaceTheme
 
 @Composable
-fun TypeDescriptionBoxComponent(description: String) {
+fun TypeDescriptionBox(description: String) {
     PlaceTheme { colors, typography ->
         Column(
             modifier = Modifier
@@ -43,8 +43,8 @@ fun TypeDescriptionBoxComponent(description: String) {
 
 @Preview
 @Composable
-fun TypeDescriptionBoxComponentPreview() {
-    TypeDescriptionBoxComponent(
+fun TypeDescriptionBoxPreview() {
+    TypeDescriptionBox(
         description = "조용하면서 이색적인 장소를 좋아하는 여러분,\n" +
                 "평소 움직이는걸 좋아해 열심히 돌아나니며 힘들게 \n" +
                 "찾아낸 나만의 휴식처 하지만 금방 또 다른 사람들에게 \n" +
