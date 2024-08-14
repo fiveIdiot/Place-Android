@@ -21,7 +21,6 @@ fun TypeDescriptionSection(description: String) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp)
                 .clip(RoundedCornerShape(10.dp))
                 .background(colors.grey10)
                 .padding(vertical = 24.dp, horizontal = 16.dp)
