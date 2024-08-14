@@ -17,11 +17,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.theme.PlaceTheme
+import com.place.onboard.model.surveyresult.TypeScoreItem
 
 @Composable
 fun TypeScoreItem(
-    firstType: Pair<String, Int>,
-    secondType: Pair<String, Int>,
+    firstType: TypeScoreItem,
+    secondType: TypeScoreItem,
 ) {
     PlaceTheme { colors, typography ->
         Row(
@@ -29,9 +30,9 @@ fun TypeScoreItem(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = firstType.first,
+                text = firstType.type,
                 style = typography.subHeadline3,
-                color = if (firstType.second > secondType.second) colors.white else colors.grey7
+                color = if (firstType.score > secondType.score) colors.white else colors.grey7
             )
             Spacer(modifier = Modifier.width(8.dp))
             Row(
@@ -51,10 +52,10 @@ fun TypeScoreItem(
                                 }
                             )
                             .background(
-                                if (firstType.second > secondType.second) {
-                                    if (i <= firstType.second) colors.orange4 else colors.grey10
+                                if (firstType.score > secondType.score) {
+                                    if (i <= firstType.score) colors.orange4 else colors.grey10
                                 } else {
-                                    if (i <= (5 - secondType.second)) colors.grey10 else colors.orange4
+                                    if (i <= (5 - secondType.score)) colors.grey10 else colors.orange4
                                 }
                             )
                     )
@@ -62,9 +63,9 @@ fun TypeScoreItem(
             }
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = secondType.first,
+                text = secondType.type,
                 style = typography.body1,
-                color = if (firstType.second < secondType.second) colors.white else colors.grey7
+                color = if (firstType.score < secondType.score) colors.white else colors.grey7
             )
         }
     }
@@ -74,7 +75,7 @@ fun TypeScoreItem(
 @Composable
 fun TypeScoreItemPreview() {
     TypeScoreItem(
-        firstType = Pair("유형", 2),
-        secondType = Pair("유형", 3)
+        firstType = TypeScoreItem("유형", 2),
+        secondType = TypeScoreItem("유형", 3)
     )
 }
