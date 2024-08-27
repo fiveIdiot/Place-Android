@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun FilterLayout(
     onResetButtonClick: () -> Unit,
-    content: @Composable PagerScope.(page: Int) -> Unit
+    content: @Composable PagerScope.(page: String) -> Unit,
 ) {
     val scope = rememberCoroutineScope()
     val filterTypes = remember {
@@ -62,7 +62,7 @@ fun FilterLayout(
                 Spacer(modifier = Modifier.weight(1f))
                 IconButton(
                     modifier = Modifier.size(24.dp),
-                    onClick = {}
+                    onClick = onResetButtonClick
                 ) {
                     AgainIcon(modifier = Modifier.size(24.dp))
                 }
@@ -70,7 +70,9 @@ fun FilterLayout(
             HorizontalPager(
                 modifier = Modifier.fillMaxSize(),
                 state = pagerState,
-                pageContent = content
+                pageContent = {
+                    content(filterTypes[it])
+                }
             )
         }
     }

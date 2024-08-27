@@ -1,5 +1,6 @@
 package com.place.home.components.filter
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomSheetDefaults
@@ -19,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.place.designsystem.theme.PlaceTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun FilterBottomSheet(
     bottomSheetState: SheetState,
@@ -39,7 +40,17 @@ fun FilterBottomSheet(
             },
             onDismissRequest = onDismissRequest
         ) {
+            FilterLayout(onResetButtonClick = { /*TODO*/ }) {
+                when (it) {
+                    "방문인원" -> {
 
+                    }
+
+                    "카테고리" -> {
+
+                    }
+                }
+            }
         }
     }
 }
